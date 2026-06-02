@@ -139,7 +139,7 @@ input[type="range"] {
   display: block;
 }
 #breath-circle {
-  transition: r 0.1s linear, fill 0.1s linear;
+  /* transitions removed — JS drives updates at 100ms */
 }
 
 .phase-label {

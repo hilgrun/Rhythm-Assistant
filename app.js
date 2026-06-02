@@ -273,8 +273,6 @@
       rCol = 240 - 180 * colorRatio; gCol = 20; bCol = 20; a = 0.9 - 0.3 * colorRatio;
     } else if (phase === 'hold') {
       rCol = 240; gCol = 20; bCol = 20; a = 0.9;
-    } else if (phase === 'exhaleHold') {
-      rCol = 20; gCol = 60; bCol = 240; a = 0.9;
     } else {
       rCol = 200; gCol = 60; bCol = 60; a = 0.8;
     }
@@ -296,7 +294,7 @@
     } else if (appState.phase === 'hold') {
       setCircle(1, 1, 'hold');
     } else if (appState.phase === 'exhaleHold') {
-      setCircle(1, 1, 'exhaleHold');
+      setCircle(0, 1, 'exhale'); // keep exhale-end red state
     }
   }
 
