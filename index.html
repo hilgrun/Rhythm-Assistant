@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Rhythm Assistant</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Rhythm Assistant</h1>
+  </header>
+
+  <!-- Settings Panel -->
+  <section id="settings-panel" class="settings-grid">
+    <div class="setting-row">
+      <label>Inhale</label>
+      <div class="slider-box">
+        <input type="range" id="inhale-slider" min="0.5" max="10" step="0.5" value="4">
+        <span id="inhale-val">4.0 s</span>
+      </div>
+    </div>
+    <div class="setting-row">
+      <label>Hold</label>
+      <div class="slider-box">
+        <input type="range" id="hold-slider" min="0" max="10" step="0.5" value="7">
+        <span id="hold-val">7.0 s</span>
+      </div>
+    </div>
+    <div class="setting-row">
+      <label>Exhale</label>
+      <div class="slider-box">
+        <input type="range" id="exhale-slider" min="0.5" max="10" step="0.5" value="8">
+        <span id="exhale-val">8.0 s</span>
+      </div>
+    </div>
+    <div class="setting-row">
+      <label>Exhale Hold</label>
+      <div class="slider-box">
+        <input type="range" id="exhale-hold-slider" min="0" max="10" step="0.5" value="0">
+        <span id="exhale-hold-val">0.0 s</span>
+      </div>
+    </div>
+    <div class="setting-row">
+      <label>Countdown</label>
+      <div class="slider-box">
+        <input type="range" id="countdown-slider" min="0" max="10" step="1" value="3">
+        <span id="countdown-val">3 s</span>
+      </div>
+    </div>
+    <div class="setting-row">
+      <label>Duration</label>
+      <div class="slider-box">
+        <input type="range" id="total-slider" min="0.5" max="10" step="0.5" value="3">
+        <span id="total-val">3.0 min</span>
+      </div>
+    </div>
+    <div class="setting-row switches">
+      <button id="btn-sound" class="toggle on">Sound ON</button>
+      <button id="btn-vibrate" class="toggle on">Vibrate ON</button>
+    </div>
+    <div class="setting-row">
+      <label>Volume</label>
+      <div class="slider-box">
+        <input type="range" id="vol-slider" min="0" max="1" step="0.01" value="0.8">
+        <span id="vol-val">80%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breathing Visualizer -->
+  <section id="visualizer" class="visualizer">
+    <div class="circle-wrap">
+      <svg viewBox="0 0 240 240" id="breath-svg">
+        <circle id="breath-circle" cx="120" cy="120" r="20" fill="rgba(200,60,60,0.8)" />
+      </svg>
+    </div>
+    <div class="phase-label" id="phase-label">Ready</div>
+    <div class="countdown" id="countdown">0.0</div>
+    <div class="progress-text" id="progress-text">Total: 0:00 / 3:00</div>
+  </section>
+
+  <!-- Controls -->
+  <section class="controls">
+    <button id="btn-start" class="btn primary">Start</button>
+    <button id="btn-pause" class="btn secondary hidden" disabled>Pause</button>
+    <button id="btn-resume" class="btn primary hidden" disabled>Resume</button>
+    <button id="btn-end" class="btn danger hidden" disabled>End</button>
+  </section>
+</div>
+
+<!-- Install Banner -->
+<div id="install-banner">
+  <p>Install Rhythm Assistant to your home screen for offline use</p>
+  <button class="btn-install" id="btn-install">Install</button>
+  <button class="btn-close" id="btn-close-banner">&times;</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
